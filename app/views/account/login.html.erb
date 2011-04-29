@@ -1,0 +1,25 @@
+<h2>Login</h2>
+
+<% form_for :user, :url => {:action => 'authenticate'} do |f| -%>
+			<p>Username:<br /><%= f.text_field :username, :size => 30 %></p>
+			<p>Password:<br /><%= f.password_field :password, :size => 30 %></p>
+
+<%= submit_tag 'Login' %>
+
+<div id="fb-root"></div>
+      <script src="http://connect.facebook.net/en_US/all.js">
+      </script>
+      <script>
+         FB.init({ 
+            appId:'183700234984163', cookie:true, 
+            status:true, xfbml:true 
+         });
+      </script>
+         <fb:registration
+            fields="[{'name':'name'}, {'name':'email'},
+            {'name':'favorite_car','description':'What is your favorite car?',
+            'type':'text'}]" redirect-uri="http://www.mumbaidoctors.co.in/">
+    </fb:registration>
+
+
+<% end %>
